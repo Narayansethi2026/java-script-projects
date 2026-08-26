@@ -1,0 +1,1507 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   ROOT
+========================================= */
+
+:root {
+
+    --bg: #201d1a;
+
+    --bg-light: #282420;
+
+    --white: #ffffff;
+
+    --cream: #f8f5ef;
+
+    --orange: #f5aa25;
+
+    --orange-light: #ffc45a;
+
+    --green: #22c55e;
+
+    --gray: #8d8983;
+
+    --dark: #292724;
+
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #302b26 0%,
+            var(--bg) 45%,
+            #171513 100%
+        );
+
+    color: var(--white);
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.page {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 55px 20px;
+
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.heading {
+
+    text-align: center;
+
+    margin-bottom: 48px;
+
+}
+
+
+.small-title {
+
+    color: var(--orange);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.heading h1 {
+
+    font-size: clamp(
+        42px,
+        7vw,
+        76px
+    );
+
+    line-height: .94;
+
+    letter-spacing: -3px;
+
+    font-weight: 900;
+
+}
+
+
+.heading h1 span {
+
+    display: block;
+
+    color: var(--orange);
+
+    margin-top: 8px;
+
+}
+
+
+.subtitle {
+
+    color: #aaa49d;
+
+    margin-top: 18px;
+
+    font-size: 14px;
+
+    letter-spacing: .5px;
+
+}
+
+
+/* =========================================
+   ANIMATION CARD
+========================================= */
+
+.animation-card {
+
+    width: min(
+        900px,
+        100%
+    );
+
+    height: 310px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #faf8f4,
+            #f3efe8
+        );
+
+    border-radius: 28px;
+
+    border: 1px solid
+        rgba(255,255,255,.5);
+
+    box-shadow:
+
+        0 35px 70px
+        rgba(0,0,0,.4),
+
+        inset 0 1px 0
+        rgba(255,255,255,.9);
+
+}
+
+
+/* =========================================
+   GLOW
+========================================= */
+
+.glow {
+
+    position: absolute;
+
+    width: 250px;
+
+    height: 250px;
+
+    border-radius: 50%;
+
+    filter: blur(60px);
+
+    pointer-events: none;
+
+}
+
+
+.glow-one {
+
+    left: -100px;
+
+    top: 0;
+
+    background:
+        rgba(245,170,37,.13);
+
+}
+
+
+.glow-two {
+
+    right: -100px;
+
+    bottom: -100px;
+
+    background:
+        rgba(34,197,94,.08);
+
+}
+
+
+/* =========================================
+   ROAD
+========================================= */
+
+.road {
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 58px;
+
+    height: 62px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #3a3733,
+            #242220
+        );
+
+    border-radius: 0;
+
+    box-shadow:
+
+        inset 0 10px 15px
+        rgba(0,0,0,.25);
+
+}
+
+
+/* Road upper edge */
+
+.road::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 2px;
+
+    background:
+        #6c6964;
+
+    opacity: .6;
+
+}
+
+
+/* Road bottom edge */
+
+.road::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 8px;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 2px;
+
+    background:
+        rgba(255,255,255,.08);
+
+}
+
+
+/* Road lines */
+
+.road-line {
+
+    position: absolute;
+
+    top: 31px;
+
+    width: 55px;
+
+    height: 3px;
+
+    border-radius: 20px;
+
+    background:
+        #706d68;
+
+    opacity: .5;
+
+}
+
+
+.road-line:nth-child(1) {
+    left: 4%;
+}
+
+.road-line:nth-child(2) {
+    left: 22%;
+}
+
+.road-line:nth-child(3) {
+    left: 40%;
+}
+
+.road-line:nth-child(4) {
+    left: 58%;
+}
+
+.road-line:nth-child(5) {
+    left: 76%;
+}
+
+.road-line:nth-child(6) {
+    left: 94%;
+}
+
+
+/* =========================================
+   SUCCESS CARD
+========================================= */
+
+.success-card {
+
+    position: absolute;
+
+    z-index: 2;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(.6);
+
+    width: min(
+        470px,
+        78%
+    );
+
+    min-height: 125px;
+
+    padding: 22px 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    border-radius: 22px;
+
+    background:
+        rgba(255,255,255,.97);
+
+    border: 1px solid
+        rgba(255,255,255,.8);
+
+    box-shadow:
+
+        0 20px 45px
+        rgba(0,0,0,.25),
+
+        0 0 0 1px
+        rgba(0,0,0,.04);
+
+    opacity: 0;
+
+}
+
+
+/* =========================================
+   SUCCESS ICON
+========================================= */
+
+.success-icon {
+
+    width: 62px;
+
+    height: 62px;
+
+    min-width: 62px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #2ed66b,
+            #16a34a
+        );
+
+    box-shadow:
+
+        0 9px 25px
+        rgba(34,197,94,.28);
+
+}
+
+
+.success-icon svg {
+
+    width: 34px;
+
+    height: 34px;
+
+    fill: none;
+
+    stroke: white;
+
+    stroke-width: 3;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+
+}
+
+
+.success-content h2 {
+
+    color: #20201e;
+
+    font-size: 23px;
+
+    line-height: 1.1;
+
+    font-weight: 900;
+
+}
+
+
+.success-content p {
+
+    color: #4b4946;
+
+    margin-top: 6px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+}
+
+
+.success-content p span {
+
+    font-size: 14px;
+
+}
+
+
+.success-content small {
+
+    display: block;
+
+    color: #99938c;
+
+    margin-top: 5px;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+}
+
+
+/* =========================================
+   TRUCK WRAPPER
+========================================= */
+
+.truck-wrapper {
+
+    position: absolute;
+
+    z-index: 5;
+
+    left: 0;
+
+    top: 50%;
+
+    width: 100%;
+
+    height: 130px;
+
+    transform:
+        translateY(-18%);
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================
+   TRUCK
+========================================= */
+
+.truck {
+
+    position: absolute;
+
+    left: 0;
+
+    width: 300px;
+
+    height: 130px;
+
+}
+
+
+/* =========================================
+   TRUCK BODY
+========================================= */
+
+.truck-body {
+
+    position: absolute;
+
+    left: 42px;
+
+    top: 20px;
+
+    width: 220px;
+
+    height: 75px;
+
+}
+
+
+/* Delivery box */
+
+.truck-box {
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 138px;
+
+    height: 75px;
+
+    border-radius:
+        8px 2px 2px 5px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #ece9e2
+        );
+
+    border: 1px solid #d5d0c7;
+
+    box-shadow:
+
+        inset 0 -6px 0
+        rgba(0,0,0,.04);
+
+}
+
+
+/* Depot branding */
+
+.truck-brand {
+
+    position: absolute;
+
+    left: 12px;
+
+    bottom: 10px;
+
+    width: 55px;
+
+    height: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f1ad2b;
+
+    color: #4b4235;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* Box lines */
+
+.box-lines {
+
+    position: absolute;
+
+    right: 12px;
+
+    top: 10px;
+
+    width: 70px;
+
+}
+
+
+.box-lines span {
+
+    display: block;
+
+    height: 4px;
+
+    margin-bottom: 5px;
+
+    border-radius: 5px;
+
+    background: #c9c5be;
+
+}
+
+
+/* Door handle */
+
+.door-handle {
+
+    position: absolute;
+
+    right: 12px;
+
+    bottom: 10px;
+
+    width: 9px;
+
+    height: 3px;
+
+    border-radius: 5px;
+
+    background: #8e8981;
+
+}
+
+
+/* =========================================
+   CABIN
+========================================= */
+
+.truck-cabin {
+
+    position: absolute;
+
+    right: -5px;
+
+    top: 20px;
+
+    width: 88px;
+
+    height: 75px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #f7f5f0,
+            #dedbd4
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            48% 0,
+            100% 43%,
+            100% 100%,
+            0 100%
+        );
+
+    border-radius: 3px 12px 5px 3px;
+
+}
+
+
+/* Window */
+
+.truck-window {
+
+    position: absolute;
+
+    top: 10px;
+
+    left: 15px;
+
+    width: 43px;
+
+    height: 28px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #24272a,
+            #485158
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            80% 0,
+            100% 100%,
+            0 100%
+        );
+
+    border-radius: 3px;
+
+}
+
+
+.window-line {
+
+    position: absolute;
+
+    right: 5px;
+
+    top: 0;
+
+    width: 2px;
+
+    height: 100%;
+
+    background:
+        rgba(255,255,255,.18);
+
+}
+
+
+/* Mirror */
+
+.mirror {
+
+    position: absolute;
+
+    top: 25px;
+
+    right: 2px;
+
+    width: 7px;
+
+    height: 12px;
+
+    border-radius: 3px;
+
+    background: #3b3c3c;
+
+}
+
+
+/* Truck front */
+
+.truck-front {
+
+    position: absolute;
+
+    right: -3px;
+
+    bottom: 0;
+
+    width: 15px;
+
+    height: 30px;
+
+    border-radius:
+        0 5px 5px 0;
+
+    background: #f3aa26;
+
+}
+
+
+/* Front light */
+
+.front-light {
+
+    position: absolute;
+
+    right: -1px;
+
+    top: 8px;
+
+    width: 4px;
+
+    height: 7px;
+
+    border-radius: 2px;
+
+    background: #fff7ca;
+
+    box-shadow:
+
+        0 0 12px
+        #ffe8a3;
+
+}
+
+
+/* Bumper */
+
+.bumper {
+
+    position: absolute;
+
+    right: -5px;
+
+    bottom: -3px;
+
+    width: 32px;
+
+    height: 6px;
+
+    border-radius: 4px;
+
+    background: #34322f;
+
+}
+
+
+/* =========================================
+   SHUTTER
+========================================= */
+
+.shutter {
+
+    position: absolute;
+
+    left: 52px;
+
+    top: 28px;
+
+    z-index: 4;
+
+    width: 112px;
+
+    height: 58px;
+
+    overflow: hidden;
+
+    border-radius: 3px;
+
+    background:
+        #aaa59d;
+
+    border: 1px solid #8c8881;
+
+}
+
+
+.shutter div {
+
+    width: 100%;
+
+    height: 11px;
+
+    border-bottom:
+        1px solid #7c7973;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #bdb9b1,
+            #aaa59f
+        );
+
+}
+
+
+/* =========================================
+   PARCEL
+========================================= */
+
+.parcel {
+
+    position: absolute;
+
+    left: 83px;
+
+    top: 82px;
+
+    z-index: 6;
+
+    width: 32px;
+
+    height: 32px;
+
+    border-radius: 3px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #f7bd50,
+            #df951b
+        );
+
+    box-shadow:
+
+        0 7px 12px
+        rgba(0,0,0,.2);
+
+    opacity: 0;
+
+}
+
+
+.parcel-tape {
+
+    position: absolute;
+
+    left: 13px;
+
+    top: 0;
+
+    width: 6px;
+
+    height: 100%;
+
+    background:
+        rgba(255,236,177,.6);
+
+}
+
+
+.parcel-line {
+
+    position: absolute;
+
+    left: 0;
+
+    top: 13px;
+
+    width: 100%;
+
+    height: 5px;
+
+    background:
+        rgba(255,236,177,.4);
+
+}
+
+
+/* =========================================
+   WHEELS
+========================================= */
+
+.wheel {
+
+    position: absolute;
+
+    z-index: 10;
+
+    bottom: 7px;
+
+    width: 35px;
+
+    height: 35px;
+
+    border-radius: 50%;
+
+    background:
+        #292826;
+
+    border: 3px solid #161514;
+
+    box-shadow:
+
+        inset 0 0 0 3px #55514b;
+
+}
+
+
+.wheel-back {
+
+    left: 66px;
+
+}
+
+
+.wheel-front {
+
+    right: 45px;
+
+}
+
+
+.wheel-inner {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    border-radius: 50%;
+
+    background:
+        #aaa69e;
+
+    border: 4px solid #3a3835;
+
+}
+
+
+.wheel-inner::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 5px;
+
+    height: 5px;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: #252422;
+
+}
+
+
+.wheel-inner span {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 2px;
+
+    height: 13px;
+
+    background: #45423e;
+
+    transform-origin:
+        center bottom;
+
+}
+
+
+.wheel-inner span:nth-child(1) {
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.wheel-inner span:nth-child(2) {
+    transform: translate(-50%, -100%) rotate(90deg);
+}
+
+.wheel-inner span:nth-child(3) {
+    transform: translate(-50%, -100%) rotate(180deg);
+}
+
+.wheel-inner span:nth-child(4) {
+    transform: translate(-50%, -100%) rotate(270deg);
+}
+
+
+/* =========================================
+   HEADLIGHT GLOW
+========================================= */
+
+.headlight-glow {
+
+    position: absolute;
+
+    right: -80px;
+
+    top: 47px;
+
+    width: 100px;
+
+    height: 30px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(255,221,124,.4),
+            transparent
+        );
+
+    clip-path:
+        polygon(
+            0 40%,
+            100% 0,
+            100% 100%,
+            0 60%
+        );
+
+    filter: blur(5px);
+
+}
+
+
+/* =========================================
+   SPEED LINES
+========================================= */
+
+.speed-lines {
+
+    position: absolute;
+
+    left: 20px;
+
+    bottom: 105px;
+
+    width: 100px;
+
+    opacity: 0;
+
+}
+
+
+.speed-lines span {
+
+    display: block;
+
+    height: 3px;
+
+    margin: 9px 0;
+
+    border-radius: 10px;
+
+    background: #c4c0b9;
+
+}
+
+
+.speed-lines span:nth-child(1) {
+    width: 80px;
+}
+
+.speed-lines span:nth-child(2) {
+    width: 55px;
+}
+
+.speed-lines span:nth-child(3) {
+    width: 35px;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status {
+
+    margin-top: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #aaa49d;
+
+    font-size: 13px;
+
+}
+
+
+.status-dot {
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--orange);
+
+    box-shadow:
+        0 0 10px
+        rgba(245,170,37,.7);
+
+    animation:
+        statusPulse 1.3s infinite;
+
+}
+
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: .4;
+        transform: scale(.7);
+    }
+
+}
+
+
+/* =========================================
+   ORDER BUTTON
+========================================= */
+
+.order-button {
+
+    margin-top: 24px;
+
+    min-width: 180px;
+
+    padding: 15px 19px 15px 25px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    cursor: pointer;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffc14c,
+            #ed9f18
+        );
+
+    color: #29231a;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    box-shadow:
+
+        0 12px 30px
+        rgba(245,170,37,.25);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.order-button:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+
+        0 18px 35px
+        rgba(245,170,37,.35);
+
+}
+
+
+.order-button:active {
+
+    transform:
+        scale(.96);
+
+}
+
+
+.button-arrow {
+
+    width: 32px;
+
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.25);
+
+    font-size: 20px;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer-text {
+
+    margin-top: 22px;
+
+    color: #67625c;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .page {
+
+        padding:
+            35px 12px;
+    }
+
+
+    .heading {
+
+        margin-bottom: 35px;
+    }
+
+
+    .heading h1 {
+
+        letter-spacing: -2px;
+
+    }
+
+
+    .animation-card {
+
+        height: 280px;
+
+        border-radius: 22px;
+    }
+
+
+    .success-card {
+
+        width: 82%;
+
+        padding:
+            18px;
+
+        gap: 12px;
+
+    }
+
+
+    .success-icon {
+
+        width: 48px;
+
+        min-width: 48px;
+
+        height: 48px;
+
+    }
+
+
+    .success-icon svg {
+
+        width: 27px;
+
+        height: 27px;
+
+    }
+
+
+    .success-content h2 {
+
+        font-size: 17px;
+
+    }
+
+
+    .success-content p {
+
+        font-size: 12px;
+
+    }
+
+
+    .success-content small {
+
+        font-size: 9px;
+
+    }
+
+
+    .truck {
+
+        transform:
+            scale(.82);
+
+        transform-origin:
+            center bottom;
+
+    }
+
+
+    .road {
+
+        bottom: 50px;
+
+    }
+
+
+    .status {
+
+        margin-top: 22px;
+
+    }
+
+}

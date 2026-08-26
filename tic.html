@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Order Confirmation Animation</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="tic.css">
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         MAIN CONTAINER
+    ====================================== -->
+
+    <main class="page">
+
+
+        <!-- =================================
+             HEADING
+        ================================== -->
+
+        <header class="heading">
+
+            <p class="small-title">
+                DELIVERY SERVICE
+            </p>
+
+            <h1>
+                Order Confirm
+                <span>Animation</span>
+            </h1>
+
+            <p class="subtitle">
+                Your order is on its way
+            </p>
+
+        </header>
+
+
+
+        <!-- =================================
+             ANIMATION AREA
+        ================================== -->
+
+        <section class="animation-card">
+
+
+            <!-- Background Glow -->
+
+            <div class="glow glow-one"></div>
+
+            <div class="glow glow-two"></div>
+
+
+
+            <!-- =================================
+                 SUCCESS CARD
+                 TRUCK KE PICHE RAHEGA
+            ================================== -->
+
+            <div class="success-card">
+
+
+                <!-- Check -->
+
+                <div class="success-icon">
+
+                    <svg viewBox="0 0 24 24">
+
+                        <path d="M5 12.5L9.5 17L19 7"/>
+
+                    </svg>
+
+                </div>
+
+
+
+                <!-- Text -->
+
+                <div class="success-content">
+
+                    <h2>
+                        Order Successful!
+                    </h2>
+
+                    <p>
+                        Thank You for Your Order
+                        <span>❤️</span>
+                    </p>
+
+                    <small>
+                        Your package has been delivered
+                    </small>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                 ROAD
+            ================================== -->
+
+            <div class="road">
+
+                <div class="road-line"></div>
+
+                <div class="road-line"></div>
+
+                <div class="road-line"></div>
+
+                <div class="road-line"></div>
+
+                <div class="road-line"></div>
+
+                <div class="road-line"></div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 TRUCK
+            ================================== -->
+
+            <div class="truck-wrapper">
+
+
+                <div class="truck">
+
+
+                    <!-- =========================
+                         HEADLIGHT
+                    ========================== -->
+
+                    <div class="headlight-glow"></div>
+
+
+
+                    <!-- =========================
+                         TRUCK BODY
+                    ========================== -->
+
+                    <div class="truck-body">
+
+
+                        <!-- Delivery Box -->
+
+                        <div class="truck-box">
+
+
+                            <!-- Brand -->
+
+                            <div class="truck-brand">
+                                <span>DEPOT</span>
+                            </div>
+
+
+                            <!-- Box Lines -->
+
+                            <div class="box-lines">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </div>
+
+
+                            <!-- Door Handle -->
+
+                            <div class="door-handle"></div>
+
+
+                        </div>
+
+
+
+                        <!-- Cabin -->
+
+                        <div class="truck-cabin">
+
+
+                            <!-- Window -->
+
+                            <div class="truck-window">
+
+                                <div class="window-line"></div>
+
+                            </div>
+
+
+                            <!-- Mirror -->
+
+                            <div class="mirror"></div>
+
+
+                            <!-- Front -->
+
+                            <div class="truck-front">
+
+                                <div class="front-light"></div>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- Truck Bumper -->
+
+                        <div class="bumper"></div>
+
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         SHUTTER
+                    ========================== -->
+
+                    <div class="shutter">
+
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         PARCEL
+                    ========================== -->
+
+                    <div class="parcel">
+
+                        <div class="parcel-tape"></div>
+
+                        <div class="parcel-line"></div>
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         WHEELS
+                    ========================== -->
+
+                    <div class="wheel wheel-back">
+
+                        <div class="wheel-inner">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="wheel wheel-front">
+
+                        <div class="wheel-inner">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 SPEED LINES
+            ================================== -->
+
+            <div class="speed-lines">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             STATUS
+        ================================== -->
+
+        <div class="status">
+
+            <div class="status-dot"></div>
+
+            <span id="statusText">
+                Preparing your order...
+            </span>
+
+        </div>
+
+
+
+        <!-- =================================
+             BUTTON
+        ================================== -->
+
+        <button
+            class="order-button"
+            id="orderButton"
+            type="button"
+        >
+
+            <span>
+                Order Now
+            </span>
+
+            <div class="button-arrow">
+                →
+            </div>
+
+        </button>
+
+
+
+        <!-- =================================
+             FOOTER TEXT
+        ================================== -->
+
+        <p class="footer-text">
+            Fast • Safe • Reliable Delivery
+        </p>
+
+
+    </main>
+
+
+
+    <!-- GSAP Animation Library -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+
+    <!-- JavaScript -->
+
+    <script src="tic.js"></script>
+
+
+</body>
+
+</html>
