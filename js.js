@@ -1,75 +1,120 @@
-// let heading = document.getElementById("heading");
-// let textinput = document.getElementById("textinput");
-// let changebtn = document.getElementById("changebtn");
+// let student = [];
 
-// changebtn.addEventListener("click", function () {
+// let addBtn = document.getElementById("addBtn");
+// let nameInput = document.getElementById("name");
+// let mathInput = document.getElementById("maths");
+// let englishInput = document.getElementById("english");
+// let scienceInput = document.getElementById("science");
 
-//    heading.textContent = textinput.value
-// });
-// let heading = document.getElementById("heading");
-// let btn = document.getElementById("btn")
-
-// btn.addEventListener("click", function () {
-//   heading.innerText = "thank you bro";
-//   heading.innerHTML = "chal nikal"
-// });
-// password hide show project
-// let password = document.getElementById("password");
-// let showBtn = document.getElementById("showBtn");
-// let message = document.getElementById("message");
-
-// showBtn.addEventListener("click",function () {
-//   if (password.type === "password") {
-    
-//       password.type = "text";
-//       showBtn.textContent = "hide";
-//       document.body.style.backgroundColor = "red";
-//   }
-//   else {
-//     password.type = "password";
-//     showBtn.textContent = "show";
-//     document.body.style.backgroundColor = "white"
-//   }
-
-// });
-// let red = document.getElementById("red");
-// let orange = document.getElementById("orange")
-// let blue = document.getElementById("blue")
-
-// red.addEventListener("click", function () {
-//   document.body.style.backgroundColor = "red"
-// });
-
-// orange.addEventListener("click", function () {
-//   document.body.style.backgroundColor = "blue"
-// });
-
-// blue.addEventListener("keydown",function () {
-//   document.body.style.backgroundColor = "orange"
-// });
-// let input = document.getElementById("input");
-// let button = document.getElementById("btn");
-// let box = document.getElementById("box");
-
-// button.addEventListener("click", function () {
-//   let color = input.value;
-//   box.style.backgroundColor = color;
-//   message.innertext = "background color:" + color;
-
-// });
-// let distance = 300;
-// let petrol = 10;
-
-// let mileage = distance / petrol;
-// console.log(mileage);
-// let distance = document.getElementById("distance");
-// let fule = document.getElementById("fuel");
-// let button = document.getElementById("calculate");
 // let result = document.getElementById("result");
-// button.addEventListener("click", function() {
-//     let km = Number(distance.value);
-//     let litre = Number(fule.value);
 
-//     let mileage = km / litre;
-//     result.innerText = "mileage = " + mileage + "km/L";
+// addBtn.addEventListener("click", function () {
+//     let name = nameInput.value;
+
+//     let maths = Number(mathInput.value);
+//     let english = Number(englishInput.value);
+//     let computer = Number(scienceInput.value);
+
+//     let student = {
+//         name: name,
+//         maths: maths,
+//         english: english,
+//         computer: computer
+//     };
+
+//     student.push(student);
+
+//     displayStudent();
+
 // });
+
+// function displayStudent() {
+//     result.innerHTML = "";
+
+//     student.forEach(function (student) {
+
+//         let total = student.maths +
+//             student.english +
+//             student.computer;
+//         let percentage = total / 3;
+
+//         let card = document.createElement("div");
+
+//         card.classList.add("student-card");
+
+//         card.innerHTML = `
+//               <h2>${student.name}<h2>
+//               <p>maths: ${student.maths}</p>
+//               <p>english: ${student.english}</p>
+//               <p>science: ${student.computer}</p>
+//               <p>total: ${total}</p>
+//               <p>percentage: ${percentage}%</p>`;
+//               result.append(card);
+//     });
+// }
+let students = [];
+
+let addBtn = document.getElementById("addBtn");
+let nameInput = document.getElementById("name");
+let mathInput = document.getElementById("maths");
+let englishInput = document.getElementById("english");
+let scienceInput = document.getElementById("science");
+
+let result = document.getElementById("result");
+
+
+addBtn.addEventListener("click", function () {
+
+    let name = nameInput.value;
+
+    let maths = Number(mathInput.value);
+    let english = Number(englishInput.value);
+    let computer = Number(scienceInput.value);
+
+
+    let student = {
+        name: name,
+        maths: maths,
+        english: english,
+        computer: computer
+    };
+
+
+    students.push(student);
+
+    displayStudents();
+});
+
+
+function displayStudents() {
+
+    result.innerHTML = "";
+
+    students.forEach(function (student) {
+
+        let total =
+            student.maths +
+            student.english +
+            student.computer;
+
+        let percentage = total / 3;
+
+
+        let card = document.createElement("div");
+
+        card.classList.add("students-card");
+
+
+        card.innerHTML = `
+            <h2>${student.name}</h2>
+            <p>Maths: ${student.maths}</p>
+            <p>English: ${student.english}</p>
+            <p>Science: ${student.computer}</p>
+            <p>Total: ${total}</p>
+            <p>Percentage: ${percentage}%</p>
+        `;
+
+
+        result.append(card);
+    });
+}

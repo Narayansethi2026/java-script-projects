@@ -1,22 +1,48 @@
-#heading{
-    background-color: red;
-    text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 
 }
-#btn{
-    size: 150px;
-    background:orange;
-    padding:20px;
-    margin-top: 20px;
-    margin-left: 314px;
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f2f2;
+    padding:40px;
 }
-#box{
-    width: 300px;
-    height: 200px;
-    background-color: lightsteelblue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 40px;
-    border: 3px solid black;
+.container{
+    max-width: 600px;
+    margin: auto;
+}
+h1{
+    text-align: center;
+    margin-bottom: 25px;
+
+}
+.form-box {
+   background-color: orchid;
+   padding: 20px;
+   border-radius: 10px;
+}
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    background: orange;
+    color:white;
+}
+#result {
+    margin-top 20px;
+}
+.student-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;    
+}
+.student-card h2{
+    margin-bottom: 10px;
+}
+.student-card p {
+    margin: 5px 0;
 }
