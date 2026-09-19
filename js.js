@@ -1,18 +1,17 @@
-// function removeSpace() {
-//     let str = document.getElementById("text").value;
-//     let result = str . replace(/\s/g, "");
-//     document.getElementById("result").innerHTML = result;
-// }
+function calculate() {
 
-// function removeSpace() {
-//     let str = document.getElementById("text").value;
-//     let result = str . replace(/\s/g, "");
-//     document.getElementById("result").innerHTML = result;
-// }
+    let amount = Number(document.getElementById("amount").value);
+    let months = Number(document.getElementById("months").value);
 
+    let rate;
 
-function reverseString() {
-    let str = document.getElementById("txt").value;
-    let rev = str.split("").reverse().join("");
-    document.getElementById("result").innerHTML = rev;
+    if (months > 60) {
+        rate = 12;
+
+    } else {
+        rate = 2;
+    }
+    let interest = amount * rate * months / (12 * 100);
+
+    document.getElementById("result").innerHTML = "interest = " + interest;
 }
