@@ -8,24 +8,61 @@
     <title>DGVCL bill calculate</title>
 
 </head>
-<div class="card">
-    <h2>DGVCL Calculate</h2>
-    <div class="input-group">
-        <label for="units">enter total untis</label>
-        <input type="number" id="units" placeholder="e.g 150">
-    </div>
-    <button onclick="calc()">calculate</button>
+<body>
+    
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Clock</title>
+    <style>
+        body {
+            background: #111;
+            color: #00ffcc;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .clock-card {
+            background: #222;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #00ffcc55;
+            text-align: center;
+        }
+        #time { font-size: 40px; font-weight: bold; }
+        #date { font-size: 16px; color: #aaa; margin-top: 5px; }
+    </style>
+</head>
+<body>
 
-    <div class="result-box">
-        <h3 id="calc()">calculate bill</h3>
+    <div class="clock-card">
+        <div id="time">00:00:00</div>
+        <div id="date">Date Loading...</div>
     </div>
-    <div class="result-box">
-        <h3 id="res">Total Bill: ₹0.00</h3>
-    </div>
-</div>
 
+    <script>
+        function updateClock() {
+            let now = new Date();
+            
+            // Time Format (HH:MM:SS)
+            document.getElementById("time").innerText = now.toLocaleTimeString();
+            
+            // Date Format (Day, DD Mon YYYY)
+            let options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+            document.getElementById("date").innerText = now.toLocaleDateString('en-US', options);
+        }
 
-<h3 id="res"></h3>
+        // Har 1 second (1000ms) me time update hoga
+        setInterval(updateClock, 1000);
+        updateClock(); // Initial call
+    </script>
+
+</body>
+</html>
+
 
 
 
