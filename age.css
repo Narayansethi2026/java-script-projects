@@ -1,94 +1,32 @@
-* {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            min-height: 100vh;
+body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            height: 100vh;
+            margin: 0;
+            background-color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.4s ease; /* Smooth color change animation */
         }
-
-        .card {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            width: 100%;
-            max-width: 420px;
-            text-align: center;
-        }
-
-        .card h2 {
-            color: #1e3c72;
-            margin-bottom: 20px;
-        }
-
-        .input-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .input-group label {
-            display: block;
-            font-size: 14px;
-            color: #333;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        input[type="datetime-local"] {
-            width: 100%;
-            padding: 10px 12px;
-            border: 2px solid #ccc;
+        h2 {
+            background: white;
+            padding: 10px 20px;
             border-radius: 8px;
-            font-size: 15px;
-            outline: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-
-        input[type="datetime-local"]:focus {
-            border-color: #1e3c72;
-        }
-
         button {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(to right, #1e3c72, #2a5298);
-            border: none;
-            color: white;
-            font-size: 16px;
+            padding: 12px 25px;
+            font-size: 18px;
             font-weight: bold;
-            border-radius: 8px;
             cursor: pointer;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            background: linear-gradient(to right, #162c54, #1f3d73);
-        }
-
-        .result-box {
+            border: none;
+            border-radius: 8px;
+            background: #222;
+            color: white;
             margin-top: 20px;
-            padding: 15px;
-            background: #f4f7f6;
-            border-left: 5px solid #1e3c72;
-            border-radius: 6px;
-            text-align: left;
-            display: none;
         }
-
-        .result-box p {
-            font-size: 15px;
-            margin: 6px 0;
-            color: #2c3e50;
+        button:active {
+            transform: scale(0.95); /* Button click effect */
         }
-
-        .result-box span {
-            font-weight: bold;
-            color: #1e3c72;
-        }
+    

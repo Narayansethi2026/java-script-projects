@@ -14,51 +14,13 @@
 <html>
 <head>
     <title>Digital Clock</title>
-    <style>
-        body {
-            background: #111;
-            color: #00ffcc;
-            font-family: 'Courier New', monospace;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .clock-card {
-            background: #222;
-            padding: 20px 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px #00ffcc55;
-            text-align: center;
-        }
-        #time { font-size: 40px; font-weight: bold; }
-        #date { font-size: 16px; color: #aaa; margin-top: 5px; }
-    </style>
+   
 </head>
 <body>
+    <h2 id="colorText">#e0e0e0</h2>
+    <button onclick="changeColor()">Change Background</button>
 
-    <div class="clock-card">
-        <div id="time">00:00:00</div>
-        <div id="date">Date Loading...</div>
-    </div>
-
-    <script>
-        function updateClock() {
-            let now = new Date();
-            
-            // Time Format (HH:MM:SS)
-            document.getElementById("time").innerText = now.toLocaleTimeString();
-            
-            // Date Format (Day, DD Mon YYYY)
-            let options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
-            document.getElementById("date").innerText = now.toLocaleDateString('en-US', options);
-        }
-
-        // Har 1 second (1000ms) me time update hoga
-        setInterval(updateClock, 1000);
-        updateClock(); // Initial call
-    </script>
+    
 
 </body>
 </html>
