@@ -1,387 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
+    <title>Bus LED Panel - Fixed Bus No + Scrolling Route</title>
+    <style>
+        body {
+            background: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Courier New', monospace;
+        }
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+        .panel {
+            background: #000;
+            border: 6px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 18px 20px;
+            box-shadow: 0 0 40px rgba(255, 140, 0, 0.5),
+                        inset 0 0 20px rgba(255, 140, 0, 0.1);
+            width: 650px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
 
-    <title>Order Confirmation Animation</title>
+        /* LED dots background effect */
+        .panel::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(255,140,0,0.08) 1px, transparent 1px);
+            background-size: 6px 6px;
+            pointer-events: none;
+        }
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+        /* FIXED Bus Number (left side) */
+        .bus-number {
+            color: #ff8800;
+            font-size: 40px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px #ff8800, 0 0 20px #ff5500, 0 0 30px #ff3300;
+            padding-right: 15px;
+            white-space: nowrap;
+            z-index: 2;
+            position: relative;
+        }
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+        /* Separator line */
+        .separator {
+            width: 3px;
+            height: 55px;
+            background: linear-gradient(to bottom, transparent, #ff8800, transparent);
+            box-shadow: 0 0 12px #ff8800;
+            margin-right: 15px;
+            flex-shrink: 0;
+            z-index: 2;
+        }
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-          rel="stylesheet">
+        /* Scrolling text container */
+        .scroll-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            height: 55px;
+        }
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="tic.css">
+        .scroll-text {
+            color: #ff8800;
+            font-size: 40px;
+            font-weight: bold;
+            white-space: nowrap;
+            text-shadow: 0 0 10px #ff8800, 0 0 20px #ff5500;
+            animation: scroll-left 18s linear infinite;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @keyframes scroll-left {
+            0%   { left: 100%; }
+            100% { left: -100%; }
+        }
+    </style>
 </head>
-
-
 <body>
-
-
-    <!-- =====================================
-         MAIN CONTAINER
-    ====================================== -->
-
-    <main class="page">
-
-
-        <!-- =================================
-             HEADING
-        ================================== -->
-
-        <header class="heading">
-
-            <p class="small-title">
-                DELIVERY SERVICE
-            </p>
-
-            <h1>
-                Order Confirm
-                <span>Animation</span>
-            </h1>
-
-            <p class="subtitle">
-                Your order is on its way
-            </p>
-
-        </header>
-
-
-
-        <!-- =================================
-             ANIMATION AREA
-        ================================== -->
-
-        <section class="animation-card">
-
-
-            <!-- Background Glow -->
-
-            <div class="glow glow-one"></div>
-
-            <div class="glow glow-two"></div>
-
-
-
-            <!-- =================================
-                 SUCCESS CARD
-                 TRUCK KE PICHE RAHEGA
-            ================================== -->
-
-            <div class="success-card">
-
-
-                <!-- Check -->
-
-                <div class="success-icon">
-
-                    <svg viewBox="0 0 24 24">
-
-                        <path d="M5 12.5L9.5 17L19 7"/>
-
-                    </svg>
-
-                </div>
-
-
-
-                <!-- Text -->
-
-                <div class="success-content">
-
-                    <h2>
-                        Order Successful!
-                    </h2>
-
-                    <p>
-                        Thank You for Your Order
-                        <span>❤️</span>
-                    </p>
-
-                    <small>
-                        Your package has been delivered
-                    </small>
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- =================================
-                 ROAD
-            ================================== -->
-
-            <div class="road">
-
-                <div class="road-line"></div>
-
-                <div class="road-line"></div>
-
-                <div class="road-line"></div>
-
-                <div class="road-line"></div>
-
-                <div class="road-line"></div>
-
-                <div class="road-line"></div>
-
-            </div>
-
-
-
-            <!-- =================================
-                 TRUCK
-            ================================== -->
-
-            <div class="truck-wrapper">
-
-
-                <div class="truck">
-
-
-                    <!-- =========================
-                         HEADLIGHT
-                    ========================== -->
-
-                    <div class="headlight-glow"></div>
-
-
-
-                    <!-- =========================
-                         TRUCK BODY
-                    ========================== -->
-
-                    <div class="truck-body">
-
-
-                        <!-- Delivery Box -->
-
-                        <div class="truck-box">
-
-
-                            <!-- Brand -->
-
-                            <div class="truck-brand">
-                                <span>DEPOT</span>
-                            </div>
-
-
-                            <!-- Box Lines -->
-
-                            <div class="box-lines">
-
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-
-                            </div>
-
-
-                            <!-- Door Handle -->
-
-                            <div class="door-handle"></div>
-
-
-                        </div>
-
-
-
-                        <!-- Cabin -->
-
-                        <div class="truck-cabin">
-
-
-                            <!-- Window -->
-
-                            <div class="truck-window">
-
-                                <div class="window-line"></div>
-
-                            </div>
-
-
-                            <!-- Mirror -->
-
-                            <div class="mirror"></div>
-
-
-                            <!-- Front -->
-
-                            <div class="truck-front">
-
-                                <div class="front-light"></div>
-
-                            </div>
-
-
-                        </div>
-
-
-
-                        <!-- Truck Bumper -->
-
-                        <div class="bumper"></div>
-
-
-                    </div>
-
-
-
-                    <!-- =========================
-                         SHUTTER
-                    ========================== -->
-
-                    <div class="shutter">
-
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-
-                    </div>
-
-
-
-                    <!-- =========================
-                         PARCEL
-                    ========================== -->
-
-                    <div class="parcel">
-
-                        <div class="parcel-tape"></div>
-
-                        <div class="parcel-line"></div>
-
-                    </div>
-
-
-
-                    <!-- =========================
-                         WHEELS
-                    ========================== -->
-
-                    <div class="wheel wheel-back">
-
-                        <div class="wheel-inner">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="wheel wheel-front">
-
-                        <div class="wheel-inner">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =================================
-                 SPEED LINES
-            ================================== -->
-
-            <div class="speed-lines">
-
-                <span></span>
-                <span></span>
-                <span></span>
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =================================
-             STATUS
-        ================================== -->
-
-        <div class="status">
-
-            <div class="status-dot"></div>
-
-            <span id="statusText">
-                Preparing your order...
-            </span>
-
+    <div class="panel">
+        <!-- FIXED Bus Number -->
+        <div class="bus-number">118</div>
+
+        <!-- Separator Line -->
+        <div class="separator"></div>
+
+        <!-- Scrolling Route Text -->
+        <div class="scroll-container">
+            <div class="scroll-text">SURAT RLWY STATION TO SAYAN RLWY STATION</div>
         </div>
-
-
-
-        <!-- =================================
-             BUTTON
-        ================================== -->
-
-        <button
-            class="order-button"
-            id="orderButton"
-            type="button"
-        >
-
-            <span>
-                Order Now
-            </span>
-
-            <div class="button-arrow">
-                →
-            </div>
-
-        </button>
-
-
-
-        <!-- =================================
-             FOOTER TEXT
-        ================================== -->
-
-        <p class="footer-text">
-            Fast • Safe • Reliable Delivery
-        </p>
-
-
-    </main>
-
-
-
-    <!-- GSAP Animation Library -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-
-
-    <!-- JavaScript -->
-
-    <script src="tic.js"></script>
-
-
+    </div>
 </body>
-
 </html>
